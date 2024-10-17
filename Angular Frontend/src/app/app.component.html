@@ -1,0 +1,154 @@
+<mat-toolbar color="primary">
+  <span >Location Tracking System</span>
+  <span class="spacer"></span>
+  <a class="tag" routerLink="/dashboard">Home</a>
+  <a class="tag" routerLink="/location">Location</a>
+  <button mat-icon-button [matMenuTriggerFor]="accountMenu">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <!-- Dropdown Menu -->
+  <mat-menu #accountMenu="matMenu">
+    <button mat-menu-item (click)="onSignIn()">
+      <mat-icon>login</mat-icon>
+      <span>Sign In</span>
+    </button>
+    <button mat-menu-item (click)="onSignUp()">
+      <mat-icon>person_add</mat-icon>
+      <span>Sign Up</span>
+    </button>
+    <button mat-menu-item (click)="onLogout()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+    <button mat-menu-item routerLink="/location">
+      <mat-icon>settings</mat-icon>
+      <span>Settings</span>
+    </button>
+    <button mat-menu-item (click)="onThemes()">
+      <mat-icon>palette</mat-icon>
+      <span>Themes</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<section class="info_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <h6>
+          Subscribe Now
+        </h6>
+        <p>
+          Whether sharing your expertise, breaking news, or whatever’s on your mind, you’re in good company on Blogger. 
+        </p>
+        <form action="">
+          <input type="text" placeholder="Enter your email">
+          <div class="d-flex justify-content-end">
+            <button>
+              subscribe
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-2">
+        <h6>
+          Information
+        </h6>
+        <ul>
+          <li>
+            <a href="">
+              There are many
+            </a>
+          </li>
+          <li>
+            <a href="">
+              variations of
+            </a>
+          </li>
+          <li>
+            <a href="">
+              passages of Lorem
+            </a>
+          </li>
+          <li>
+            <a href="">
+              Ipsum available,
+            </a>
+          </li>
+          <li>
+            <a href="">
+              but the majority
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
+        <h6>
+          Helpful Links
+        </h6>
+        <ul>
+          <li>
+            <a href="">
+              Help Center
+             
+            </a>
+          </li>
+          <li>
+            <a href="">
+              Help Forum
+            
+            </a>
+          </li>
+          <li>
+            <a href="">
+              Video Tutorials
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-2">
+        <h6>
+          Contact Us
+        </h6>
+        <div class="info_link-box">
+          <a href="">
+            <img src="../../assets/location.png" alt="">
+            <span> Location</span>
+          </a>
+          <a href="">
+            <img src="../../assets/call.png" alt="">
+            <span>+918269377569</span>
+          </a>
+          <a href="">
+            <img src="../../assets/envelope.png" alt="">
+            <span> dhanraj.kushwah@gmail.com</span>
+          </a>
+        </div>
+        <div class="info_social">
+          <div>
+            <a href="">
+              <img src="../../assets/fb.png" alt="">
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <img src="../../assets/twitter.png" alt="">
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <img src="../../assets/linkedin.png" alt="">
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <img src="../../assets/insta.png" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

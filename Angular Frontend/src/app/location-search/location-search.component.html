@@ -1,0 +1,25 @@
+<div class="search-container">
+    <div class="input-group">
+      <input 
+        type="text" 
+        [(ngModel)]="query" 
+        (input)="onSearchChange($event)" 
+        placeholder="Search for a location" 
+        class="search-input"
+      />
+      <button (click)="searchLocation()" class="search-btn">Search</button>
+    </div>
+  
+    <!-- Autocomplete suggestions -->
+    <div *ngIf="suggestions.length > 0" class="autocomplete-suggestions">
+      <ul>
+        <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
+          {{ suggestion.display_name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Map container -->
+  <div id="map"></div>
+  
