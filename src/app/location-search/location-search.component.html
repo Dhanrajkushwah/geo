@@ -1,10 +1,10 @@
 <div class="search-container">
     <div class="input-group">
-      <input 
-        type="text" 
-        [(ngModel)]="query" 
-        (input)="onSearchChange($event)" 
-        placeholder="Search for a location" 
+      <input
+        type="text"
+        [(ngModel)]="query"
+        (input)="onSearchChange($event)"
+        placeholder="Search for a location"
         class="search-input"
       />
       <button (click)="searchLocation()" class="search-btn">Search</button>
@@ -14,12 +14,12 @@
     <div *ngIf="suggestions.length > 0" class="autocomplete-suggestions">
       <ul>
         <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
-          {{ suggestion.display_name }}
+          {{ suggestion.formatted }}
         </li>
       </ul>
     </div>
   </div>
   
   <!-- Map container -->
-  <div id="map"></div>
+  <div id="map" style="height: 400px;"></div>
   
