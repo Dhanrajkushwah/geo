@@ -1,25 +1,28 @@
-<div class="search-container">
-    <div class="input-group">
-      <input
-        type="text"
-        [(ngModel)]="query"
-        (input)="onSearchChange($event)"
-        placeholder="Search for a location"
-        class="search-input"
-      />
-      <button (click)="searchLocation()" class="search-btn">Search</button>
+<div class="location-search-container">
+  <div class="input-row">
+    <div class="input-wrapper">
+      <input type="text" [(ngModel)]="startLocation" (input)="onSearchChange($event, 'start')" placeholder="Start Location" class="input-field">
+      <ul *ngIf="startSuggestions.length > 0" class="suggestions-list">
+        <li *ngFor="let suggestion of startSuggestions" (click)="selectSuggestion(suggestion, 'start')">
+          {{ suggestion.formatted }}
+        </li>
+      </ul>
     </div>
-  
-    <!-- Autocomplete suggestions -->
-    <div *ngIf="suggestions.length > 0" class="autocomplete-suggestions">
-      <ul>
-        <li *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
+    
+    <div class="input-wrapper">
+      <input type="text" [(ngModel)]="endLocation" (input)="onSearchChange($event, 'end')" placeholder="End Location" class="input-field">
+      <ul *ngIf="endSuggestions.length > 0" class="suggestions-list">
+        <li *ngFor="let suggestion of endSuggestions" (click)="selectSuggestion(suggestion, 'end')">
           {{ suggestion.formatted }}
         </li>
       </ul>
     </div>
   </div>
+
+  <div class="buttons-container">
+    <button (click)="swapLocations()" class="action-button">Swap Locations</button>
+    <button (click)="calculateRoute()" class="action-button">Calculate Route</button>
+  </div>
   
-  <!-- Map container -->
-  <div id="map" style="height: 400px;"></div>
-  
+  <div id="map" class="map-container"></div>
+</div>
